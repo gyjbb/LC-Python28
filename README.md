@@ -10,8 +10,9 @@ Congratulations!\
 This is the 28th day for leetcode python study. Today we will learn about the Greedy Algorithm!\
 The challenges today are especially about ~~the two jump games~~
 
-## 1005.
-K次取反后最大化的数组和  a simple question
+## 1005.Maximize Sum Of Array After K Negations
+[sort the positive and negative numbers](https://www.geeksforgeeks.org/python-rearrange-positive-and-negative-elements/)\
+
 
 
 ## 134. 
