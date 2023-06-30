@@ -12,7 +12,7 @@ The challenges today are especially about ~~the two jump games~~
 
 ## 1005.Maximize Sum Of Array After K Negations
 [sort the positive and negative numbers](https://www.geeksforgeeks.org/python-rearrange-positive-and-negative-elements/)\
-Fristly we sort the given array based on the absolute values. If the number is negative, we change it to positive. If the k is still larger than 1 and is odd after changing all negative values, we change the smallest positive number to negative.
+Firstly we sort the given array based on the absolute values. If the number is negative, we change it to positive. If the k is still larger than 1 and is odd after changing all negative values, we change the smallest positive number to negative.
 ```python 
 class Solution:
     def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
@@ -32,8 +32,27 @@ class Solution:
 
 
 ## 134.Gas Station
-hard, be familiar with way 2.
+hard, be familiar with way 2.\
+At each station, we know how much gas we can get, and how much it would cost to get to the next station. We want to know the net increase of gas. 
+```python
+class Solution:
+    def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+        curSum = 0
+        totalSum = 0
+        start = 0
 
+        for i in range(len(gas)):
+            curSum  += gas[i] - cost[i]
+            totalSum += gas[i] - cost[i]
+
+            if curSum < 0:
+                start  = i+1    #update the start station for returning the correct start
+                curSum = 0      #reset curSum to 0 and start new counting
+            
+        if totalSum < 0:
+            return -1
+        return start
+```
 
 
 ## 135. 
