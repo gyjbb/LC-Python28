@@ -2,7 +2,7 @@
 Greedy Algorithm 3
 
 
-## 
+## 1005.Maximize Sum Of Array After K Negations, 
 
 June 28, 2023  4h
 
@@ -55,9 +55,8 @@ class Solution:
 ```
 
 
-## 135. 
-分发糖果 本题涉及到一个思想，就是想处理好一边再处理另一边，不要两边想着一起兼顾，后面还会有题目用到这个思路 
-
+## 135.Candy
+Deal with one side first, then deal with the other side. Don't process both sides together. \
 
 
 
