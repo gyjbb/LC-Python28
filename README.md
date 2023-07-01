@@ -8,7 +8,8 @@ June 28, 2023  4h
 
 Congratulations!\
 This is the 28th day for leetcode python study. Today we will learn about the Greedy Algorithm!\
-The challenges today are especially about ~~the two jump games~~
+The challenges today are especially about sorting both  positive and negative numbers, the concept of net increase, and processing one side at each time and merging the results.
+
 
 ## 1005.Maximize Sum Of Array After K Negations
 [sort the positive and negative numbers](https://www.geeksforgeeks.org/python-rearrange-positive-and-negative-elements/)\
@@ -56,8 +57,23 @@ class Solution:
 
 
 ## 135.Candy
-Deal with one side first, then deal with the other side. Don't process both sides together. \
+Deal with one side first, then deal with the other side. Don't process both sides together. 
+```python
+class Solution:
+    def candy(self, ratings: List[int]) -> int:
+        candyVec = [1] * len(ratings)
 
+        #iterate from left to right
+        for i in range(1, len(ratings)):
+            if ratings[i] >  ratings[i-1]:
+                candyVec[i] =  candyVec[i-1] + 1
 
-
+        #iterate from right to left
+        for i  in range(len(ratings)-2, -1, -1):
+            if ratings[i] >  ratings[i+1]:
+                candyVec[i] = max(candyVec[i], candyVec[i+1]+1)
+        
+        result = sum(candyVec)
+        return result
+```
 
